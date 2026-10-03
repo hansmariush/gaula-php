@@ -1,0 +1,45 @@
+# Lokalt (Docker Desktop):
+#   docker compose -f docker-compose.yml -f docker-compose.local.yml up --build
+# Siden: http://localhost:8000   E-post (Mailpit): http://localhost:8025
+# Kildekoden monteres inn, så endringer synes med én gang. vendor/ ligger i
+# containeren; endrer du composer.json: kjør `... run --rm app composer update`.
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    image: gaula-php:dev
+    ports:
+      - "8000:80"
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8000
+      SERVER_NAME: ":80"
+      MAIL_MAILER: smtp
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+    volumes:
+      - .:/app
+      - /app/vendor
+      - uploads:/app/storage/app/public
+
+  scheduler:
+    image: gaula-php:dev
+    environment:
+      APP_ENV: local
+      MAIL_MAILER: smtp
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+    volumes:
+      - .:/app
+      - /app/vendor
+
+  db:
+    ports:
+      - "3307:3306"
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "8025:8025"

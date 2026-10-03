@@ -15,4 +15,4 @@ fi
 
 ssh "$H" "mkdir -p $D && find $D -mindepth 1 -maxdepth 1 ! -name .env -exec rm -rf {} +"
 git archive --format=tar HEAD | ssh "$H" "tar -m --no-same-owner -x -C $D"
-ssh "$H" "cd $D && docker compose up -d --build && docker compose ps"
+ssh "$H" "cd $D && docker compose -f docker-compose.yml -f docker-compose.homelab.yml up -d --build && docker compose -f docker-compose.yml -f docker-compose.homelab.yml ps"

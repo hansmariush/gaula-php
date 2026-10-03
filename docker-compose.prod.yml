@@ -1,0 +1,18 @@
+# VPS: https med eget domene. FrankenPHP/Caddy henter og fornyer sertifikatet selv.
+# Sett APP_DOMAIN (f.eks. gaula.descartes.no) og DB_PASSWORD i .env på serveren.
+services:
+  app:
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      SERVER_NAME: ${APP_DOMAIN:?sett APP_DOMAIN i .env}
+    volumes:
+      - uploads:/app/storage/app/public
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

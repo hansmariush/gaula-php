@@ -1,0 +1,7 @@
+# Hjemmelaben: http://192.168.1.232:8081
+services:
+  app:
+    ports:
+      - "8081:80"
+    environment:
+      SERVER_NAME: ":80"
