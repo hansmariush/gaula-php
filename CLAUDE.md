@@ -13,7 +13,8 @@ fasit for logikken og går i prod til denne er ferdig og sammenlignet.
 - Windows-maskinen har ikke PHP, Composer eller Docker. Alt kjøres i Docker
   på hjemmelaben (LXC `root@192.168.1.232`).
 - Kjører på http://192.168.1.232:8081 (`/opt/gaula-php`, MariaDB i volumet
-  `dbdata`).
+  `dbdata`). Lokal stack og VPS: se README (`docker-compose.local.yml`,
+  `docker-compose.prod.yml`, `scripts/deploy-vps.sh`).
 
 ## Slik jobber vi
 
