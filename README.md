@@ -5,6 +5,19 @@ gjestene. Laravel 13 + Filament 5 + HTMX. Omskriving av `gaula-python`.
 
 Status og plan: [PLAN.md](PLAN.md). Arbeidsrutiner: [CLAUDE.md](CLAUDE.md).
 
+## Status og videre retning – 18. november 2026
+
+- **Laravel i dette repoet er neste versjon av Gaula.** Omskrivingen er under
+  arbeid; statusen i planen skal ikke tolkes som en ferdig produksjonsløsning.
+- **Django-versjonen i `gaula-python` er utgått og skal ikke brukes videre,**
+  verken til nyutvikling eller som fremtidig produksjonsløsning. Koden og
+  backupen beholdes bare som historisk referanse og grunnlag for datamigrering.
+- Ved kontroll 18. november 2026 kjørte `gaula.descartes.no` fortsatt Django,
+  ikke Laravel. Konfigurasjon, nøkler, kode og database er sikkerhetskopiert;
+  databasedumpen er testgjenopprettet. Den eksisterende VPS-en skal avvikles.
+- Det er ikke behov for produksjonsdrift i ventetiden. Når løsningen trengs
+  igjen, fullføres og testes Laravel-versjonen før eventuell ny publisering.
+
 ## Kjøre lokalt (Docker Desktop)
 
 ```sh

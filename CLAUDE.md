@@ -5,8 +5,20 @@ Python/Django (repoet `gaula-python`) til Laravel 13 + Filament 5, så den kan
 kjøre på et vanlig webhotell (PHP 8.3+, MySQL/MariaDB, cron, cache og køer i
 databasen). All tekst, kode og commit-meldinger er på norsk.
 
-Planen og status står i [PLAN.md](PLAN.md). Django-siden i `gaula-python` er
-fasit for logikken og går i prod til denne er ferdig og sammenlignet.
+Planen og status står i [PLAN.md](PLAN.md).
+
+## Besluttet retning – 18. november 2026
+
+- Laravel i dette repoet er neste versjon. Omskrivingen er ikke ferdig.
+- Django-versjonen i `gaula-python` er utgått. Ikke videreutvikle, deploy eller
+  sett Django i produksjon igjen. Den gamle koden er kun historisk referanse
+  for logikk, tester og datamigrering.
+- Den eksisterende VPS-en kjørte fortsatt Django ved kontroll denne datoen.
+  Konfigurasjon, nøkler, kode og database er sikkerhetskopiert, og dumpen er
+  testgjenopprettet. Serveren skal avvikles; avviklingen er ikke en deploy av
+  Laravel.
+- Det er ikke behov for produksjonsdrift i ventetiden. Ved senere behov:
+  fullfør og test Laravel, verifiser datamigreringen og etabler ny hosting.
 
 ## Miljø
 

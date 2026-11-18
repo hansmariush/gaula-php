@@ -1,8 +1,16 @@
 # Plan: gaula-python → gaula-php
 
 Mål: samme side på et vanlig webhotell (PHP 8.3+, MySQL/MariaDB, cron).
-Django-siden er fasit og går i prod til alt er sammenlignet. Hver del
-porteres sammen med testene sine.
+**Beslutning 18. november 2026:** Laravel er neste versjon. Django er utgått
+og skal ikke brukes videre eller settes i produksjon igjen. Den gamle koden
+kan brukes som historisk referanse for logikk og tester. Hver del porteres
+sammen med testene sine.
+
+Ved serverkontroll denne datoen kjørte den eksisterende VPS-en fortsatt
+Django. Konfigurasjon, nøkler, kode og database er sikkerhetskopiert, og
+databasedumpen er testgjenopprettet. VPS-en skal avvikles. Det er ikke behov
+for produksjonsdrift mens løsningen ikke er i bruk; en ny server eller et
+egnet webhotell kan tas i bruk for Laravel ved senere behov.
 
 | # | Del | Innhold | Status |
 | --- | --- | --- | --- |
@@ -11,7 +19,7 @@ porteres sammen med testene sine.
 | 3 | Gjester | Gjesteregister, meldinger, e-postmaler, tilbakemeldinger, personvern, «Ikke booket ennå» | |
 | 4 | Nettsiden og «Mitt fiske» | Forside, no/en/de, temaer, PIN og tilgangskoder, rotasjon, kart, offline | |
 | 5 | Elv og fangst | NVE, Elveguiden, NINA, stasjoner, ukestall, sesongrapport, PDF og Excel | |
-| 6 | Overgang | Testene, gammel og ny side om side, flytte domenet | |
+| 6 | Gjenoppstart ved behov | Fullføre og teste Laravel, kontrollere import fra backup og publisere på ny hosting. Django skal ikke settes i drift igjen. | |
 
 ## Valg
 
